@@ -1,0 +1,481 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/15/2019 11:44:41 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="LAPTOP-23JP0PKA"
+  DTS:CreatorName="LAPTOP-23JP0PKA\zero_"
+  DTS:DTSID="{2F987300-0239-4DEF-9B47-98545AC20C0A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="13322"
+  DTS:ObjectName="PKComunaFULL"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{8F3C5A37-4857-4A44-88C2-7208A60A3850}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Cargar Comuna"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{56957301-5C0E-4310-A7DE-7E37A4030EEE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cargar Comuna"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Cargar Comuna\Comuna"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Comuna"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[Comuna]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cargar Comuna\Comuna.Connections[OleDbConnection]"
+                  connectionManagerID="{CF5DA4FB-DE54-4005-B1E7-3944ED9CBF71}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-23JP0PKA.AllCards]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Cargar Comuna\Comuna.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar Comuna\Comuna.Outputs[Salida de origen de OLE DB].Columns[cod_comuna]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar Comuna\Comuna.Outputs[Salida de origen de OLE DB].ExternalColumns[cod_comuna]"
+                      lineageId="Package\Cargar Comuna\Comuna.Outputs[Salida de origen de OLE DB].Columns[cod_comuna]"
+                      name="cod_comuna"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar Comuna\Comuna.Outputs[Salida de origen de OLE DB].Columns[nom_comuna]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar Comuna\Comuna.Outputs[Salida de origen de OLE DB].ExternalColumns[nom_comuna]"
+                      length="50"
+                      lineageId="Package\Cargar Comuna\Comuna.Outputs[Salida de origen de OLE DB].Columns[nom_comuna]"
+                      name="nom_comuna"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cargar Comuna\Comuna.Outputs[Salida de origen de OLE DB].Columns[cod_provincia]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cargar Comuna\Comuna.Outputs[Salida de origen de OLE DB].ExternalColumns[cod_provincia]"
+                      lineageId="Package\Cargar Comuna\Comuna.Outputs[Salida de origen de OLE DB].Columns[cod_provincia]"
+                      name="cod_provincia"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar Comuna\Comuna.Outputs[Salida de origen de OLE DB].ExternalColumns[cod_comuna]"
+                      dataType="i4"
+                      name="cod_comuna" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Comuna\Comuna.Outputs[Salida de origen de OLE DB].ExternalColumns[nom_comuna]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="nom_comuna" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Comuna\Comuna.Outputs[Salida de origen de OLE DB].ExternalColumns[cod_provincia]"
+                      dataType="i4"
+                      name="cod_provincia" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Cargar Comuna\Comuna.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar Comuna\Comuna.Outputs[Salida de error de origen de OLE DB].Columns[cod_comuna]"
+                      dataType="i4"
+                      lineageId="Package\Cargar Comuna\Comuna.Outputs[Salida de error de origen de OLE DB].Columns[cod_comuna]"
+                      name="cod_comuna" />
+                    <outputColumn
+                      refId="Package\Cargar Comuna\Comuna.Outputs[Salida de error de origen de OLE DB].Columns[nom_comuna]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Cargar Comuna\Comuna.Outputs[Salida de error de origen de OLE DB].Columns[nom_comuna]"
+                      name="nom_comuna" />
+                    <outputColumn
+                      refId="Package\Cargar Comuna\Comuna.Outputs[Salida de error de origen de OLE DB].Columns[cod_provincia]"
+                      dataType="i4"
+                      lineageId="Package\Cargar Comuna\Comuna.Outputs[Salida de error de origen de OLE DB].Columns[cod_provincia]"
+                      name="cod_provincia" />
+                    <outputColumn
+                      refId="Package\Cargar Comuna\Comuna.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar Comuna\Comuna.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar Comuna\Comuna.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar Comuna\Comuna.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cargar Comuna\DWComuna"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="DWComuna"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[DWComuna]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cargar Comuna\DWComuna.Connections[OleDbConnection]"
+                  connectionManagerID="{7A42AB30-1591-41DF-BDFD-69BC05E27009}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-23JP0PKA.DWAllCards]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Cargar Comuna\DWComuna.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cargar Comuna\DWComuna.Inputs[Entrada de destino de OLE DB].Columns[cod_comuna]"
+                      cachedDataType="i4"
+                      cachedName="cod_comuna"
+                      externalMetadataColumnId="Package\Cargar Comuna\DWComuna.Inputs[Entrada de destino de OLE DB].ExternalColumns[cod_comuna]"
+                      lineageId="Package\Cargar Comuna\Comuna.Outputs[Salida de origen de OLE DB].Columns[cod_comuna]" />
+                    <inputColumn
+                      refId="Package\Cargar Comuna\DWComuna.Inputs[Entrada de destino de OLE DB].Columns[nom_comuna]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="nom_comuna"
+                      externalMetadataColumnId="Package\Cargar Comuna\DWComuna.Inputs[Entrada de destino de OLE DB].ExternalColumns[nom_comuna]"
+                      lineageId="Package\Cargar Comuna\Comuna.Outputs[Salida de origen de OLE DB].Columns[nom_comuna]" />
+                    <inputColumn
+                      refId="Package\Cargar Comuna\DWComuna.Inputs[Entrada de destino de OLE DB].Columns[cod_provincia]"
+                      cachedDataType="i4"
+                      cachedName="cod_provincia"
+                      externalMetadataColumnId="Package\Cargar Comuna\DWComuna.Inputs[Entrada de destino de OLE DB].ExternalColumns[cod_provincia]"
+                      lineageId="Package\Cargar Comuna\Comuna.Outputs[Salida de origen de OLE DB].Columns[cod_provincia]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar Comuna\DWComuna.Inputs[Entrada de destino de OLE DB].ExternalColumns[cod_comuna]"
+                      dataType="i4"
+                      name="cod_comuna" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Comuna\DWComuna.Inputs[Entrada de destino de OLE DB].ExternalColumns[nom_comuna]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="nom_comuna" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar Comuna\DWComuna.Inputs[Entrada de destino de OLE DB].ExternalColumns[cod_provincia]"
+                      dataType="i4"
+                      name="cod_provincia" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cargar Comuna\DWComuna.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Cargar Comuna\DWComuna.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar Comuna\DWComuna.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar Comuna\DWComuna.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar Comuna\DWComuna.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar Comuna\DWComuna.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Cargar Comuna.Paths[Salida de origen de OLE DB]"
+              endId="Package\Cargar Comuna\DWComuna.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Cargar Comuna\Comuna.Outputs[Salida de origen de OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Limpiar Comuna"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{35640073-D3DA-43FE-8840-2AAFBB99DA95}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Limpiar Comuna"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{7A42AB30-1591-41DF-BDFD-69BC05E27009}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="delete from DWComuna" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{8C9FF481-AB7F-469A-9E8C-319CDEE795C1}"
+      DTS:From="Package\Limpiar Comuna"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Cargar Comuna" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Cargar Comuna"
+          TopLeft="88.0000014986311,117.458825176727" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Limpiar Comuna"
+          TopLeft="82.2857156870317,36.0941181532652" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="161.742858592831,77.6941181532652">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.7647070234622"
+              Start="0,0"
+              End="0,32.2647070234622">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.2647070234622" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Cargar Comuna">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="116.8,41.6"
+          Id="Package\Cargar Comuna\Comuna"
+          TopLeft="179.428574484222,152.329413901068" />
+        <NodeLayout
+          Size="133.6,41.6"
+          Id="Package\Cargar Comuna\DWComuna"
+          TopLeft="230.857146788617,258.164709503016" />
+        <EdgeLayout
+          Id="Package\Cargar Comuna.Paths[Salida de origen de OLE DB]"
+          TopLeft="237.828574484222,193.929413901068">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="59.828572304395,64.235295601948"
+              Start="0,0"
+              End="59.828572304395,56.735295601948">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.117647800974" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28.117647800974"
+                    Point2="0,32.117647800974"
+                    Point3="4,32.117647800974" />
+                  <mssgle:LineSegment
+                    End="55.828572304395,32.117647800974" />
+                  <mssgle:CubicBezierSegment
+                    Point1="55.828572304395,32.117647800974"
+                    Point2="59.828572304395,32.117647800974"
+                    Point3="59.828572304395,36.117647800974" />
+                  <mssgle:LineSegment
+                    End="59.828572304395,56.735295601948" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar Comuna\DWComuna">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cargar Comuna\Comuna">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
